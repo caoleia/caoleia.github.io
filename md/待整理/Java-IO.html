@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Java IO | My vuepress</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/favicon.ico">
+    <script src="https://hm.baidu.com/hm.js?xxxxxxxxxxx"></script>
+    <meta name="description" content="Todo">
+    <meta name="robots" content="all">
+    <meta name="author" content="pdai">
+    <meta name="keywords" content="Java 全栈知识体系, java体系, java知识体系, java框架,java详解,java学习路线,java spring, java面试, 知识体系, java技术体系, java编程, java编程指南,java开发体系, java开发,java教程,java,java数据结构, 算法, 开发基础">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="preload" href="/assets/css/0.styles.144ea653.css" as="style"><link rel="preload" href="/assets/js/app.afcd353c.js" as="script"><link rel="preload" href="/assets/js/2.6527dd7c.js" as="script"><link rel="preload" href="/assets/js/48.54a6e067.js" as="script"><link rel="prefetch" href="/assets/js/10.b8af9589.js"><link rel="prefetch" href="/assets/js/11.da070787.js"><link rel="prefetch" href="/assets/js/12.e8c2df3f.js"><link rel="prefetch" href="/assets/js/13.13f8690b.js"><link rel="prefetch" href="/assets/js/14.97d7a7c6.js"><link rel="prefetch" href="/assets/js/15.ca82dd18.js"><link rel="prefetch" href="/assets/js/16.0795663b.js"><link rel="prefetch" href="/assets/js/17.9f529ede.js"><link rel="prefetch" href="/assets/js/18.aa494d1d.js"><link rel="prefetch" href="/assets/js/19.c5e368a6.js"><link rel="prefetch" href="/assets/js/20.8486962d.js"><link rel="prefetch" href="/assets/js/21.1a96e733.js"><link rel="prefetch" href="/assets/js/22.5b4929c3.js"><link rel="prefetch" href="/assets/js/23.7bc228ce.js"><link rel="prefetch" href="/assets/js/24.63116242.js"><link rel="prefetch" href="/assets/js/25.e9163e8b.js"><link rel="prefetch" href="/assets/js/26.31132baf.js"><link rel="prefetch" href="/assets/js/27.728265df.js"><link rel="prefetch" href="/assets/js/28.4cb93316.js"><link rel="prefetch" href="/assets/js/29.30a99cb0.js"><link rel="prefetch" href="/assets/js/3.e3c760c5.js"><link rel="prefetch" href="/assets/js/30.39c64819.js"><link rel="prefetch" href="/assets/js/31.78e9d272.js"><link rel="prefetch" href="/assets/js/32.e71f2609.js"><link rel="prefetch" href="/assets/js/33.b182a570.js"><link rel="prefetch" href="/assets/js/34.d919b2af.js"><link rel="prefetch" href="/assets/js/35.e2cdb183.js"><link rel="prefetch" href="/assets/js/36.759e107d.js"><link rel="prefetch" href="/assets/js/37.a0ccb526.js"><link rel="prefetch" href="/assets/js/38.8f8ec90d.js"><link rel="prefetch" href="/assets/js/39.bcb56569.js"><link rel="prefetch" href="/assets/js/4.e1e5a770.js"><link rel="prefetch" href="/assets/js/40.cb9e68d1.js"><link rel="prefetch" href="/assets/js/41.f7324d34.js"><link rel="prefetch" href="/assets/js/42.fbc4875e.js"><link rel="prefetch" href="/assets/js/43.602efb90.js"><link rel="prefetch" href="/assets/js/44.5cdea7dd.js"><link rel="prefetch" href="/assets/js/45.08b55f16.js"><link rel="prefetch" href="/assets/js/46.89b660d7.js"><link rel="prefetch" href="/assets/js/47.8041c4a7.js"><link rel="prefetch" href="/assets/js/49.63fc5fb5.js"><link rel="prefetch" href="/assets/js/5.b9a4a83e.js"><link rel="prefetch" href="/assets/js/50.defc28ad.js"><link rel="prefetch" href="/assets/js/51.01fa48a2.js"><link rel="prefetch" href="/assets/js/52.04cb5e30.js"><link rel="prefetch" href="/assets/js/53.b04e4c27.js"><link rel="prefetch" href="/assets/js/54.a99c8dca.js"><link rel="prefetch" href="/assets/js/55.f15500bf.js"><link rel="prefetch" href="/assets/js/56.c9d0f497.js"><link rel="prefetch" href="/assets/js/57.eb7e4183.js"><link rel="prefetch" href="/assets/js/58.4a5207ff.js"><link rel="prefetch" href="/assets/js/59.8620aeb6.js"><link rel="prefetch" href="/assets/js/6.ddfdb723.js"><link rel="prefetch" href="/assets/js/60.a1b1dae5.js"><link rel="prefetch" href="/assets/js/61.e6ec84e2.js"><link rel="prefetch" href="/assets/js/62.8703dde9.js"><link rel="prefetch" href="/assets/js/63.76d6c8fe.js"><link rel="prefetch" href="/assets/js/64.1abf1796.js"><link rel="prefetch" href="/assets/js/65.7430076b.js"><link rel="prefetch" href="/assets/js/66.9ca1a22b.js"><link rel="prefetch" href="/assets/js/67.aeba61a8.js"><link rel="prefetch" href="/assets/js/68.81e8ae85.js"><link rel="prefetch" href="/assets/js/69.fb8f7d5d.js"><link rel="prefetch" href="/assets/js/7.6689766d.js"><link rel="prefetch" href="/assets/js/70.f55dc26a.js"><link rel="prefetch" href="/assets/js/71.d310670d.js"><link rel="prefetch" href="/assets/js/72.d0b65202.js"><link rel="prefetch" href="/assets/js/73.fbee5211.js"><link rel="prefetch" href="/assets/js/74.952412ed.js"><link rel="prefetch" href="/assets/js/75.2f6086aa.js"><link rel="prefetch" href="/assets/js/76.7b2a8f50.js"><link rel="prefetch" href="/assets/js/77.f75ad0d8.js"><link rel="prefetch" href="/assets/js/8.1f4717e3.js"><link rel="prefetch" href="/assets/js/9.a70f9ef6.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.144ea653.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">My vuepress</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/md/java/base/Base.html" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/md/about/并发编程.html" class="nav-link">
+  关于
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/md/java/base/Base.html" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/md/about/并发编程.html" class="nav-link">
+  关于
+</a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="io模型"><a href="#io模型" class="header-anchor">#</a> IO模型</h1> <p>根据UNIX网络编程对I/O模型的分类，在UNIX可以归纳成5种I/O模型：
+阻塞I/O
+非阻塞I/O
+I/O多路复用
+信号驱动I/O
+异步I/O
+</p> <h2 id="i-o模型基础"><a href="#i-o模型基础" class="header-anchor">#</a> I/O模型基础</h2> <h3 id="文件描述符"><a href="#文件描述符" class="header-anchor">#</a> 文件描述符</h3> <p>Linux的内核将所有外部设备都看做一个文件来操作，对一个文件的读写操作会调用内核提供的系统命令(api)，返回一个file descriptor（fd，文件描述符）。而对一个socket的读写也会有响应的描述符，称为socket fd（socket文件描述符），描述符就是一个数字，指向内核中的一个结构体（文件路径，数据区等一些属性）。</p> <p>所以说：在Linux下对文件的操作是利用文件描述符(file descriptor)来实现的。</p> <h3 id="用户空间和内核空间"><a href="#用户空间和内核空间" class="header-anchor">#</a> 用户空间和内核空间</h3> <p>为了保证用户进程不能直接操作内核（kernel），保证内核的安全，操心系统将虚拟空间划分为两部分
+一部分为内核空间。
+一部分为用户空间。</p> <h3 id="i-o运行过程"><a href="#i-o运行过程" class="header-anchor">#</a> I/O运行过程</h3> <p>IO在系统中的运行,以read为例：
+<img src="/images/ref/IO11.png" alt="Alt text"></p> <p>可以发现的是：当应用程序调用read方法时，是需要等待的---&gt;从内核空间中找数据，再将内核空间的数据拷贝到用户空间的。
+这个等待是必要的过程！
+用得最多的3个I/0模型：
+阻塞I/O
+非阻塞I/O
+I/O多路复用</p> <h2 id="阻塞i-o模型"><a href="#阻塞i-o模型" class="header-anchor">#</a> 阻塞I/O模型</h2> <p>在进程(用户)空间中调用recvfrom，其系统调用直到数据包到达且被复制到应用进程的缓冲区中或者发生错误时才返回，在此期间一直等待。
+<img src="/images/ref/IO12.png" alt="Alt text"></p> <h2 id="非阻塞i-o模型"><a href="#非阻塞i-o模型" class="header-anchor">#</a> 非阻塞I/O模型</h2> <p>recvfrom从应用层到内核的时候，如果没有数据就直接返回一个EWOULDBLOCK错误，一般都对非阻塞I/O模型进行轮询检查这个状态，看内核是不是有数据到来。
+<img src="/images/ref/IO13.png" alt="Alt text"></p> <h2 id="i-o复用模型"><a href="#i-o复用模型" class="header-anchor">#</a> I/O复用模型</h2> <p>在Linux下对文件的操作是利用文件描述符(file descriptor)来实现的。</p> <p>在Linux下它是这样子实现I/O复用模型的：</p> <p>调用select/poll/epoll/pselect其中一个函数，传入多个文件描述符，如果有一个文件描述符就绪，则返回，否则阻塞直到超时。
+<img src="/images/ref/IO14.png" alt="Alt text"></p> <p>（1）当用户进程调用了select，那么整个进程会被block；
+（2）而同时，kernel会“监视”所有select负责的socket；
+（3）当任何一个socket中的数据准备好了，select就会返回；
+（4）这个时候用户进程再调用read操作，将数据从kernel拷贝到用户进程(空间)。
+所以，I/O 多路复用的特点是通过一种机制一个进程能同时等待多个文件描述符，而这些文件描述符其中的任意一个进入读就绪状态，select()函数就可以返回。
+select/epoll的优势并不是对于单个连接能处理得更快，而是在于能处理更多的连接。</p> <h2 id="i-o模型总结"><a href="#i-o模型总结" class="header-anchor">#</a> I/O模型总结</h2> <p>正经的描述都在上面给出了，不知道大家理解了没有。下面我举几个例子总结一下这三种模型：</p> <p>阻塞I/O：
+Java3y跟女朋友去买喜茶，排了很久的队终于可以点饮料了。我要绿研，谢谢。可是喜茶不是点了单就能立即拿，于是我在喜茶门口等了一小时才拿到绿研。
+<code>在门口干等一小时</code></p> <p>非阻塞I/O：
+Java3y跟女朋友去买一点点，排了很久的队终于可以点饮料了。我要波霸奶茶，谢谢。可是一点点不是点了单就能立即拿，同时服务员告诉我：你大概要等半小时哦。你们先去逛逛吧~于是Java3y跟女朋友去玩了几把斗地主，感觉时间差不多了。于是又去一点点问：请问到我了吗？我的单号是xxx。服务员告诉Java3y：还没到呢，现在的单号是XXX，你还要等一会，可以去附近耍耍。问了好几次后，终于拿到我的波霸奶茶了。
+<code>去逛了下街、斗了下地主，时不时问问到我了没有</code></p> <p>I/O复用模型：
+Java3y跟女朋友去麦当劳吃汉堡包，现在就厉害了可以使用微信小程序点餐了。于是跟女朋友找了个地方坐下就用小程序点餐了。点餐了之后玩玩斗地主、聊聊天什么的。时不时听到广播在复述XXX请取餐，反正我的单号还没到，就继续玩呗。~~等听到广播的时候再取餐就是了。时间过得挺快的，此时传来：Java3y请过来取餐。于是我就能拿到我的麦辣鸡翅汉堡了。
+<code>听广播取餐，广播不是为我一个人服务。广播喊到我了，我过去取就Ok了。</code></p> <h1 id="io"><a href="#io" class="header-anchor">#</a> IO</h1> <p>Java的IO流使用了一种装饰器设计模式，将IO流分成底层节点流和上层的处理流，其中节点流用于和底层的物理存储节点直接关关联--不用的物理节点获取节点流的方式可能存在一定的差异，单程序可以把不同的物理节点流包装成统一的处理流，从而允许程序使用统一的输入、输出代码来读取不用的物理存储节点的资源。</p> <h2 id="字节流和字符流"><a href="#字节流和字符流" class="header-anchor">#</a> 字节流和字符流</h2> <p>Java的IO通过java.io包来支持，包括输入、输出两种IO流。每种输入、输出流又可以分为字节流和字符流两大类。
+输入流主要有<code>InputStream</code>和<code>Reader</code>作为基类，输出流主要有<code>OutputStream</code>和<code>Writer</code>作为基类，它们都是抽象类无法直接创建实例。</p> <p>FileInputStream、FileReader FileOutputStream、FileWriter
+它们分别是实现InputStream、Reader....的节点流（直接和文件关联），用来读取/写入文件信息</p> <p>通常有一个规则：如果处理的是文本内容，应该使用字符流。如果处理的是二进制内容，应该使用字节流。</p> <h2 id="节点流和处理流"><a href="#节点流和处理流" class="header-anchor">#</a> 节点流和处理流</h2> <p>识别处理流：构造器不是一个物理节点，而是已经存在的流
+使用处理流的典型思路是，使用处理流来包装节点流，程序通过处理流来执行输入输出功能，让节点流与底层的IO设备、文件交互。</p> <ol><li>PrintStream/PrintWriter：输出流  功能强大，需要输出文本内容时，一般都应使用PrintStream/PrintWriter输出流代替FileOutputStream、FileWriter</li></ol> <div class="language-Java line-numbers-mode"><pre class="language-java"><code><span class="token class-name">FileOutputStream</span> fos <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileOutputStream</span><span class="token punctuation">(</span><span class="token string">&quot;text.txt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">PrintStream</span> ps <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PrintStream</span><span class="token punctuation">(</span>fos<span class="token punctuation">)</span><span class="token punctuation">;</span>
+ps<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;普通字符串&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ol start="2"><li>只需要关闭处理流，对应的节点流也会被关闭</li></ol> <h2 id="字节流转换成字符流"><a href="#字节流转换成字符流" class="header-anchor">#</a> 字节流转换成字符流</h2> <p>InputStreamReader将字节输入流转换为字符输入流
+OutputStreamWriter将字节输出流转换为字符输出流</p> <h2 id="缓冲流"><a href="#缓冲流" class="header-anchor">#</a> 缓冲流</h2> <p>BufferReader等缓冲流优点是一次可以读取一行内容，每次readLine()如果没有读到换行符，则程序阻塞，直到读取到换行符为止.常用来读取文本，替换FileReader</p> <div class="language-Java line-numbers-mode"><pre class="language-java"><code><span class="token comment">//将System.in转换为字符流</span>
+<span class="token class-name">InputStreamReader</span> reader <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">InputStreamReader</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//将普通的reader包装成BufferReader</span>
+<span class="token class-name">BufferReader</span> br <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BufferReader</span><span class="token punctuation">(</span>reader<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="推回输入流"><a href="#推回输入流" class="header-anchor">#</a> 推回输入流</h2> <p>在输入流里有两个特殊的流PushbackInputStream、PushbackInputReader可以将已经读取的流存入缓冲区中，实现后退读取功能。</p> <p>这两个输入流都带有一个推回缓冲区,当程序调用这两个流的unread()方法会把指定数组内容推回到缓冲区里。
+而每次调用read()方法时总是先从缓冲区里读取。</p> <p>找出PushbackTest.java打印出之前的内容：</p> <div class="language-Java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">try</span><span class="token punctuation">(</span>
+	<span class="token comment">// 创建一个PushbackReader对象，指定推回缓冲区的长度为64</span>
+	<span class="token class-name">PushbackReader</span> pr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PushbackReader</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileReader</span><span class="token punctuation">(</span>
+		<span class="token string">&quot;PushbackTest.java&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+	<span class="token keyword">char</span><span class="token punctuation">[</span><span class="token punctuation">]</span> buf <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">char</span><span class="token punctuation">[</span><span class="token number">32</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token comment">// 用以保存上次读取的字符串内容</span>
+	<span class="token class-name">String</span> lastContent <span class="token operator">=</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">;</span>
+	<span class="token keyword">int</span> hasRead <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token comment">// 循环读取文件内容</span>
+	<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>hasRead <span class="token operator">=</span> pr<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		<span class="token comment">// 将读取的内容转换成字符串</span>
+		<span class="token class-name">String</span> content <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>buf <span class="token punctuation">,</span> <span class="token number">0</span> <span class="token punctuation">,</span> hasRead<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">int</span> targetIndex <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+		<span class="token comment">// 将上次读取的字符串和本次读取的字符串拼起来，</span>
+		<span class="token comment">// 查看是否包含目标字符串, 如果包含目标字符串</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>targetIndex <span class="token operator">=</span> <span class="token punctuation">(</span>lastContent <span class="token operator">+</span> content<span class="token punctuation">)</span>
+			<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">&quot;new PushbackReader&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span>
+		<span class="token punctuation">{</span>
+			<span class="token comment">// 将本次内容和上次内容一起推回缓冲区</span>
+			pr<span class="token punctuation">.</span><span class="token function">unread</span><span class="token punctuation">(</span><span class="token punctuation">(</span>lastContent <span class="token operator">+</span> content<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toCharArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token comment">// 重新定义一个长度为targetIndex的char数组</span>
+			<span class="token keyword">if</span><span class="token punctuation">(</span>targetIndex <span class="token operator">&gt;</span> <span class="token number">32</span><span class="token punctuation">)</span>
+			<span class="token punctuation">{</span>
+				buf <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">char</span><span class="token punctuation">[</span>targetIndex<span class="token punctuation">]</span><span class="token punctuation">;</span>
+			<span class="token punctuation">}</span>
+			<span class="token comment">// 再次读取指定长度的内容（就是目标字符串之前的内容）</span>
+			pr<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>buf <span class="token punctuation">,</span> <span class="token number">0</span> <span class="token punctuation">,</span> targetIndex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token comment">// 打印读取的内容</span>
+			<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>buf <span class="token punctuation">,</span> <span class="token number">0</span> <span class="token punctuation">,</span>targetIndex<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		<span class="token keyword">else</span>
+		<span class="token punctuation">{</span>
+			<span class="token comment">// 打印上次读取的内容</span>
+			<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>lastContent<span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token comment">// 将本次内容设为上次读取的内容</span>
+			lastContent <span class="token operator">=</span> content<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> ioe<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+ioe<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br></div></div><h2 id="最丰富的文件内容访问类randomaccessfile"><a href="#最丰富的文件内容访问类randomaccessfile" class="header-anchor">#</a> 最丰富的文件内容访问类RandomAccessFile</h2> <p>既可以读取文件内容，也可以写入文件内容。主要特点：</p> <ol><li>支持随机访问的方式</li> <li>只需要访问文件的部分内容时的最好选择</li> <li>可以不从开始位置读取，所以追加文件内容时使用</li> <li>只能读写文件，不能读写IO节点</li></ol> <p>RandomAccessFile包含两个方法来操作文件记录指针：
+long getFilePointer()：返回文件记录指针的当前位置
+void seek(long pos)：将文件记录指针定位到pos位置</p> <p>RandomAccessFile类在创建对象时，除了指定文件本身，还需要指定一个mode参数，该参数指定RandomAccessFile的访问模式，该参数有如下四个值：
+r：以只读方式打开指定文件。如果试图对该RandomAccessFile指定的文件执行写入方法则会抛出IOException
+rw：以读取、写入方式打开指定文件。如果该文件不存在，则尝试创建文件
+rws：以读取、写入方式打开指定文件。相对于rw模式，还要求对文件的内容或元数据的每个更新都同步写入到底层存储设备，默认情形下(rw模式下),是使用buffer的,只有cache满的或者使用RandomAccessFile.close()关闭流的时候儿才真正的写到文件
+rwd：与rws类似，只是仅对文件的内容同步更新到磁盘，而不修改文件的元数据</p> <h1 id="nio"><a href="#nio" class="header-anchor">#</a> NIO</h1> <p>IO操作往往在两个场景下会用到：
+文件IO
+网络IO</p> <p>NIO的优势主要是在网络中使用IO</p> <h2 id="java-nio和io的主要区别"><a href="#java-nio和io的主要区别" class="header-anchor">#</a> Java NIO和IO的主要区别:</h2> <p>IO                NIO
+面向流            面向缓冲
+阻塞IO            非阻塞IO（网络IO）
+无                选择器（网络IO）</p> <p>可简单认为：IO是面向流的处理，NIO是面向块(缓冲区)的处理
+面向流的I/O 系统一次一个字节地处理数据。
+一个面向块(缓冲区)的I/O系统以块的形式处理数据。</p> <p>NIO主要有三个核心部分组成：
+buffer缓冲区
+Channel管道
+Selector选择器</p> <p>面向流与面向缓冲
+Java NIO和IO之间第一个最大的区别是，IO是面向流的，NIO是面向缓冲区的。 Java IO面向流意味着每次从流中读一个或多个字节，直至读取所有字节，它们没有被缓存在任何地方。此外，它不能前后移动流中的数据。如果需要前后移动从流中读取的数据，需要先将它缓存到一个缓冲区。 Java NIO的缓冲导向方法略有不同。数据读取到一个它稍后处理的缓冲区，需要时可在缓冲区中前后移动。这就增加了处理过程中的灵活性。但是，还需要检查是否该缓冲区中包含所有您需要处理的数据。而且，需确保当更多的数据读入缓冲区时，不要覆盖缓冲区里尚未处理的数据。</p> <h2 id="buffer缓冲区和channel管道"><a href="#buffer缓冲区和channel管道" class="header-anchor">#</a> buffer缓冲区和Channel管道</h2> <p>在NIO中并不是以流的方式来处理数据的，而是以buffer缓冲区和Channel管道配合使用来处理数据。</p> <p>简单理解一下：</p> <p>Channel管道比作成铁路，buffer缓冲区比作成火车(运载着货物)
+而我们的NIO就是通过Channel管道运输着存储数据的Buffer缓冲区的来实现数据的处理！</p> <p>要时刻记住：Channel不与数据打交道，它只负责运输数据。与数据打交道的是Buffer缓冲区
+Channel--&gt;运输
+Buffer--&gt;数据
+相对于传统IO而言，流是单向的。对于NIO而言，有了Channel管道这个概念，我们的读写都是双向的(铁路上的火车能从广州去北京、自然就能从北京返还到广州)！</p> <h3 id="buffer"><a href="#buffer" class="header-anchor">#</a> buffer</h3> <p>Buffer是缓冲区的抽象类，其中ByteBuffer是用得最多的实现类(在管道中读写字节数据)。
+<img src="/images/ref/IO.png" alt="Alt text"></p> <p>拿到一个缓冲区我们往往会做什么？很简单，就是读取缓冲区的数据/写数据到缓冲区中。所以，缓冲区的核心方法就是:
+put()
+get()</p> <p>Buffer类维护了4个核心变量属性来提供关于其所包含的数组的信息。它们是：</p> <p>容量Capacity
+缓冲区能够容纳的数据元素的最大数量。容量在缓冲区创建时被设定，并且永远不能被改变。(不能被改变的原因也很简单，底层是数组嘛)
+上界Limit
+缓冲区里的数据的总数，代表了当前缓冲区中一共有多少数据。
+位置Position
+下一个要被读或写的元素的位置。Position会自动由相应的 get( )和 put( )函数更新。
+标记Mark
+一个备忘位置。用于记录上一次读写的位置。</p> <h4 id="buffer代码演示"><a href="#buffer代码演示" class="header-anchor">#</a> buffer代码演示</h4> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">// 创建一个缓冲区</span>
+	<span class="token class-name">ByteBuffer</span> byteBuffer <span class="token operator">=</span> <span class="token class-name">ByteBuffer</span><span class="token punctuation">.</span><span class="token function">allocate</span><span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token comment">// 看一下初始时4个核心变量的值</span>
+	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;初始时--&gt;limit---&gt;&quot;</span><span class="token operator">+</span>byteBuffer<span class="token punctuation">.</span><span class="token function">limit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;初始时--&gt;position---&gt;&quot;</span><span class="token operator">+</span>byteBuffer<span class="token punctuation">.</span><span class="token function">position</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;初始时--&gt;capacity---&gt;&quot;</span><span class="token operator">+</span>byteBuffer<span class="token punctuation">.</span><span class="token function">capacity</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;初始时--&gt;mark---&gt;&quot;</span> <span class="token operator">+</span> byteBuffer<span class="token punctuation">.</span><span class="token function">mark</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;--------------------------------------&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token comment">// 添加一些数据到缓冲区中</span>
+	<span class="token class-name">String</span> s <span class="token operator">=</span> <span class="token string">&quot;Java3y&quot;</span><span class="token punctuation">;</span>
+	byteBuffer<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token comment">// 看一下初始时4个核心变量的值</span>
+	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;put完之后--&gt;limit---&gt;&quot;</span><span class="token operator">+</span>byteBuffer<span class="token punctuation">.</span><span class="token function">limit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;put完之后--&gt;position---&gt;&quot;</span><span class="token operator">+</span>byteBuffer<span class="token punctuation">.</span><span class="token function">position</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;put完之后--&gt;capacity---&gt;&quot;</span><span class="token operator">+</span>byteBuffer<span class="token punctuation">.</span><span class="token function">capacity</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;put完之后--&gt;mark---&gt;&quot;</span> <span class="token operator">+</span> byteBuffer<span class="token punctuation">.</span><span class="token function">mark</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><p>运行结果：
+<img src="/images/ref/IO1.png" alt="Alt text"></p> <p>现在我想要从缓存区拿数据，NIO给了我们一个flip()方法。这个方法可以改动position和limit的位置！
+我们flip()一下后，再看看4个核心属性的值会发生什么变化：
+<img src="/images/ref/IO2.png" alt="Alt text"></p> <p>很明显的是：
+limit变成了position的位置了,而position变成了0
+当调用完filp()时：limit是限制读到哪里，而position是从哪里读</p> <p>一般我们称filp()为**“切换成读模式”**,每当要从缓存区的时候读取数据时，就调用filp()“切换成读模式”。</p> <p>切换成读模式之后，我们就可以读取缓冲区的数据了：</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">// 创建一个limit()大小的字节数组(因为就只有limit这么多个数据可读)</span>
+<span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> bytes <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">byte</span><span class="token punctuation">[</span>byteBuffer<span class="token punctuation">.</span><span class="token function">limit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 将读取的数据装进我们的字节数组中</span>
+byteBuffer<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>bytes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 输出数据</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>bytes<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> bytes<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>随后输出一下核心变量的值看看：
+<img src="/images/ref/IO3.png" alt="Alt text"></p> <p>读完我们还想写数据到缓冲区，那就使用clear()函数，这个函数会“清空”缓冲区
+<img src="/images/ref/IO4.png" alt="Alt text"></p> <h3 id="filechannel"><a href="#filechannel" class="header-anchor">#</a> FileChannel</h3> <p><img src="/images/ref/IO5.png" alt="Alt text"></p> <p>Channel通道只负责传输数据、不直接操作数据的。操作数据都是通过Buffer缓冲区来进行操作！</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">// 1. 通过本地IO的方式来获取通道</span>
+<span class="token class-name">FileInputStream</span> fileInputStream <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span><span class="token string">&quot;F:\\3yBlog\\JavaEE常用框架\\Elasticsearch就是这么简单.md&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 得到文件的输入通道</span>
+<span class="token class-name">FileChannel</span> inchannel <span class="token operator">=</span> fileInputStream<span class="token punctuation">.</span><span class="token function">getChannel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 2. jdk1.7后通过静态方法.open()获取通道</span>
+<span class="token class-name">FileChannel</span><span class="token punctuation">.</span><span class="token keyword">open</span><span class="token punctuation">(</span><span class="token class-name">Paths</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;F:\\3yBlog\\JavaEE常用框架\\Elasticsearch就是这么简单2.md&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token class-name">StandardOpenOption</span><span class="token punctuation">.</span>WRITE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>使用FileChannel配合缓冲区实现文件复制的功能：
+<img src="/images/ref/IO6.png" alt="Alt text"></p> <p>使用内存映射文件的方式实现文件复制的功能(直接操作缓冲区)：
+<img src="/images/ref/IO7.png" alt="Alt text"></p> <p>通道之间通过transfer()实现数据的传输(直接操作缓冲区)：
+<img src="/images/ref/IO8.png" alt="Alt text"></p> <h4 id="直接与非直接缓冲区"><a href="#直接与非直接缓冲区" class="header-anchor">#</a> 直接与非直接缓冲区</h4> <p>非直接缓冲区是需要经过一个：copy的阶段的(从内核空间copy到用户空间)
+直接缓冲区不需要经过copy阶段，也可以理解成---&gt;内存映射文件
+<img src="/images/ref/IO9.png" alt="Alt text"></p> <p>使用直接缓冲区有两种方式：
+缓冲区创建的时候分配的是直接缓冲区
+在FileChannel上调用map()方法，将文件直接映射到内存中创建
+<img src="/images/ref/IO10.png" alt="Alt text"></p> <h2 id="使用nio完成网络通信"><a href="#使用nio完成网络通信" class="header-anchor">#</a> 使用NIO完成网络通信</h2> <p>NIO被叫为 no-blocking io，其实是在网络这个层次中理解的，对于FileChannel来说一样是阻塞。
+前面也仅仅讲解了FileChannel，对于我们网络通信是还有几个Channel的~
+<img src="/images/ref/IO15.png" alt="Alt text"></p> <p>所以说：我们通常使用NIO是在网络中使用的，网上大部分讨论NIO都是在网络通信的基础之上的！说NIO是非阻塞的也是网络中体现的！</p> <p>从上面的图我们可以发现还有一个Selector选择器这么一个东东。从一开始我们就说过了，nio的核心要素有：</p> <p>Buffer缓冲区
+Channel通道
+Selector选择器
+我们在网络中使用NIO往往是I/O模型的多路复用模型！</p> <p>Selector选择器就可以比喻成麦当劳的广播。
+一个线程能够管理多个Channel的状态</p> <p>选择器（Selectors）
+Java NIO的选择器允许一个单独的线程来监视多个输入通道，你可以注册多个通道使用一个选择器，然后使用一个单独的线程来“选择”通道：这些通道里已经有可以处理的输入，或者选择已准备写入的通道。这种选择机制，使得一个单独的线程很容易来管理多个通道
+<img src="/images/ref/IO16.png" alt="Alt text"></p> <h3 id="nio阻塞形态"><a href="#nio阻塞形态" class="header-anchor">#</a> NIO阻塞形态</h3> <p>为了更好地理解，我们先来写一下NIO在网络中是阻塞的状态代码，随后看看非阻塞是怎么写的就更容易理解了。
+是阻塞的就没有Selector选择器了，就直接使用Channel和Buffer就完事了。
+客户端：</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">BlockClient</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+
+        <span class="token comment">// 1. 获取通道</span>
+        <span class="token class-name">SocketChannel</span> socketChannel <span class="token operator">=</span> <span class="token class-name">SocketChannel</span><span class="token punctuation">.</span><span class="token keyword">open</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">InetSocketAddress</span><span class="token punctuation">(</span><span class="token string">&quot;127.0.0.1&quot;</span><span class="token punctuation">,</span> <span class="token number">6666</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 2. 发送一张图片给服务端吧</span>
+        <span class="token class-name">FileChannel</span> fileChannel <span class="token operator">=</span> <span class="token class-name">FileChannel</span><span class="token punctuation">.</span><span class="token keyword">open</span><span class="token punctuation">(</span><span class="token class-name">Paths</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;X:\\Users\\ozc\\Desktop\\新建文件夹\\1.png&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token class-name">StandardOpenOption</span><span class="token punctuation">.</span>READ<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 3.要使用NIO，有了Channel，就必然要有Buffer，Buffer是与数据打交道的呢</span>
+        <span class="token class-name">ByteBuffer</span> buffer <span class="token operator">=</span> <span class="token class-name">ByteBuffer</span><span class="token punctuation">.</span><span class="token function">allocate</span><span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 4.读取本地文件(图片)，发送到服务器</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>fileChannel<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>buffer<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+            <span class="token comment">// 在读之前都要切换成读模式</span>
+            buffer<span class="token punctuation">.</span><span class="token function">flip</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            socketChannel<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>buffer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment">// 读完切换成写模式，能让管道继续读取文件的数据</span>
+            buffer<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">// 5. 关闭流</span>
+        fileChannel<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        socketChannel<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br></div></div><p>服务端：</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">BlockServer</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+
+        <span class="token comment">// 1.获取通道</span>
+        <span class="token class-name">ServerSocketChannel</span> server <span class="token operator">=</span> <span class="token class-name">ServerSocketChannel</span><span class="token punctuation">.</span><span class="token keyword">open</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 2.得到文件通道，将客户端传递过来的图片写到本地项目下(写模式、没有则创建)</span>
+        <span class="token class-name">FileChannel</span> outChannel <span class="token operator">=</span> <span class="token class-name">FileChannel</span><span class="token punctuation">.</span><span class="token keyword">open</span><span class="token punctuation">(</span><span class="token class-name">Paths</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;2.png&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token class-name">StandardOpenOption</span><span class="token punctuation">.</span>WRITE<span class="token punctuation">,</span> <span class="token class-name">StandardOpenOption</span><span class="token punctuation">.</span>CREATE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 3. 绑定链接</span>
+        server<span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">InetSocketAddress</span><span class="token punctuation">(</span><span class="token number">6666</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 4. 获取客户端的连接(阻塞的)</span>
+        <span class="token class-name">SocketChannel</span> client <span class="token operator">=</span> server<span class="token punctuation">.</span><span class="token function">accept</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 5. 要使用NIO，有了Channel，就必然要有Buffer，Buffer是与数据打交道的呢</span>
+        <span class="token class-name">ByteBuffer</span> buffer <span class="token operator">=</span> <span class="token class-name">ByteBuffer</span><span class="token punctuation">.</span><span class="token function">allocate</span><span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 6.将客户端传递过来的图片保存在本地中</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>client<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>buffer<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+            <span class="token comment">// 在读之前都要切换成读模式</span>
+            buffer<span class="token punctuation">.</span><span class="token function">flip</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            outChannel<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>buffer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment">// 读完切换成写模式，能让管道继续读取文件的数据</span>
+            buffer<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">// 7.关闭通道</span>
+        outChannel<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        client<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        server<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br></div></div><p>结果就可以将客户端传递过来的图片保存在本地了。
+此时服务端保存完图片想要告诉客户端已经收到图片啦：
+<img src="/images/ref/IO17.png" alt="Alt text">
+客户端接收服务端带过来的数据：
+<img src="/images/ref/IO18.png" alt="Alt text"></p> <p>如果仅仅是上面的代码是不行的！这个程序会阻塞起来！
+因为服务端不知道客户端还有没有数据要发过来(与刚开始不一样，客户端发完数据就将流关闭了，服务端可以知道客户端没数据发过来了)，导致服务端一直在读取客户端发过来的数据。
+进而导致了阻塞！
+于是客户端在写完数据给服务端时，显式告诉服务端已经发完数据了！
+<img src="/images/ref/IO19.png" alt="Alt text"></p> <h3 id="nio非阻塞形态"><a href="#nio非阻塞形态" class="header-anchor">#</a> NIO非阻塞形态</h3> <p>如果使用非阻塞模式的话，那么我们就可以不显式告诉服务器已经发完数据了。
+客户端：</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">//1.1 切换成非阻塞模式</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">NoBlockClient</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+
+        <span class="token comment">// 1. 获取通道</span>
+        <span class="token class-name">SocketChannel</span> socketChannel <span class="token operator">=</span> <span class="token class-name">SocketChannel</span><span class="token punctuation">.</span><span class="token keyword">open</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">InetSocketAddress</span><span class="token punctuation">(</span><span class="token string">&quot;127.0.0.1&quot;</span><span class="token punctuation">,</span> <span class="token number">6666</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 1.1切换成非阻塞模式</span>
+        socketChannel<span class="token punctuation">.</span><span class="token function">configureBlocking</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 2. 发送一张图片给服务端吧</span>
+        <span class="token class-name">FileChannel</span> fileChannel <span class="token operator">=</span> <span class="token class-name">FileChannel</span><span class="token punctuation">.</span><span class="token keyword">open</span><span class="token punctuation">(</span><span class="token class-name">Paths</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;X:\\Users\\ozc\\Desktop\\新建文件夹\\1.png&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token class-name">StandardOpenOption</span><span class="token punctuation">.</span>READ<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 3.要使用NIO，有了Channel，就必然要有Buffer，Buffer是与数据打交道的呢</span>
+        <span class="token class-name">ByteBuffer</span> buffer <span class="token operator">=</span> <span class="token class-name">ByteBuffer</span><span class="token punctuation">.</span><span class="token function">allocate</span><span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 4.读取本地文件(图片)，发送到服务器</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>fileChannel<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>buffer<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+            <span class="token comment">// 在读之前都要切换成读模式</span>
+            buffer<span class="token punctuation">.</span><span class="token function">flip</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            socketChannel<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>buffer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment">// 读完切换成写模式，能让管道继续读取文件的数据</span>
+            buffer<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">// 5. 关闭流</span>
+        fileChannel<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        socketChannel<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br></div></div><p>服务端：</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">NoBlockServer</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+
+        <span class="token comment">// 1.获取通道</span>
+        <span class="token class-name">ServerSocketChannel</span> server <span class="token operator">=</span> <span class="token class-name">ServerSocketChannel</span><span class="token punctuation">.</span><span class="token keyword">open</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 2.切换成非阻塞模式</span>
+        server<span class="token punctuation">.</span><span class="token function">configureBlocking</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 3. 绑定连接</span>
+        server<span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">InetSocketAddress</span><span class="token punctuation">(</span><span class="token number">6666</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 4. 获取选择器</span>
+        <span class="token class-name">Selector</span> selector <span class="token operator">=</span> <span class="token class-name">Selector</span><span class="token punctuation">.</span><span class="token keyword">open</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 4.1将通道注册到选择器上，指定接收“监听通道”事件</span>
+        server<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span>selector<span class="token punctuation">,</span> <span class="token class-name">SelectionKey</span><span class="token punctuation">.</span>OP_ACCEPT<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 5. 轮训地获取选择器上已“就绪”的事件---&gt;只要select()&gt;0，说明已就绪</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>selector<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 6. 获取当前选择器所有注册的“选择键”(已就绪的监听事件)</span>
+            <span class="token class-name">Iterator</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">SelectionKey</span><span class="token punctuation">&gt;</span></span> iterator <span class="token operator">=</span> selector<span class="token punctuation">.</span><span class="token function">selectedKeys</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment">// 7. 获取已“就绪”的事件，(不同的事件做不同的事)</span>
+            <span class="token keyword">while</span> <span class="token punctuation">(</span>iterator<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+                <span class="token class-name">SelectionKey</span> selectionKey <span class="token operator">=</span> iterator<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                <span class="token comment">// 接收事件就绪</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>selectionKey<span class="token punctuation">.</span><span class="token function">isAcceptable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+                    <span class="token comment">// 8. 获取客户端的链接</span>
+                    <span class="token class-name">SocketChannel</span> client <span class="token operator">=</span> server<span class="token punctuation">.</span><span class="token function">accept</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                    <span class="token comment">// 8.1 切换成非阻塞状态</span>
+                    client<span class="token punctuation">.</span><span class="token function">configureBlocking</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                    <span class="token comment">// 8.2 注册到选择器上--&gt;拿到客户端的连接为了读取通道的数据(监听读就绪事件)</span>
+                    client<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span>selector<span class="token punctuation">,</span> <span class="token class-name">SelectionKey</span><span class="token punctuation">.</span>OP_READ<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>selectionKey<span class="token punctuation">.</span><span class="token function">isReadable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 读事件就绪</span>
+
+                    <span class="token comment">// 9. 获取当前选择器读就绪状态的通道</span>
+                    <span class="token class-name">SocketChannel</span> client <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">SocketChannel</span><span class="token punctuation">)</span> selectionKey<span class="token punctuation">.</span><span class="token function">channel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                    <span class="token comment">// 9.1读取数据</span>
+                    <span class="token class-name">ByteBuffer</span> buffer <span class="token operator">=</span> <span class="token class-name">ByteBuffer</span><span class="token punctuation">.</span><span class="token function">allocate</span><span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                    <span class="token comment">// 9.2得到文件通道，将客户端传递过来的图片写到本地项目下(写模式、没有则创建)</span>
+                    <span class="token class-name">FileChannel</span> outChannel <span class="token operator">=</span> <span class="token class-name">FileChannel</span><span class="token punctuation">.</span><span class="token keyword">open</span><span class="token punctuation">(</span><span class="token class-name">Paths</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;2.png&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token class-name">StandardOpenOption</span><span class="token punctuation">.</span>WRITE<span class="token punctuation">,</span> <span class="token class-name">StandardOpenOption</span><span class="token punctuation">.</span>CREATE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                    <span class="token keyword">while</span> <span class="token punctuation">(</span>client<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>buffer<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                        <span class="token comment">// 在读之前都要切换成读模式</span>
+                        buffer<span class="token punctuation">.</span><span class="token function">flip</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                        outChannel<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>buffer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                        <span class="token comment">// 读完切换成写模式，能让管道继续读取文件的数据</span>
+                        buffer<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+                <span class="token comment">// 10. 取消选择键(已经处理过的事件，就应该取消掉了)</span>
+                iterator<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br></div></div><p>还是刚才的需求：服务端保存了图片以后，告诉客户端已经收到图片了。</p> <p>在服务端上只要在后面写些数据给客户端就好了：
+<img src="/images/ref/IO20.png" alt="Alt text"></p> <p>在客户端上要想获取得到服务端的数据，也需要注册在register上(监听读事件)！</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">NoBlockClient2</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+
+        <span class="token comment">// 1. 获取通道</span>
+        <span class="token class-name">SocketChannel</span> socketChannel <span class="token operator">=</span> <span class="token class-name">SocketChannel</span><span class="token punctuation">.</span><span class="token keyword">open</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">InetSocketAddress</span><span class="token punctuation">(</span><span class="token string">&quot;127.0.0.1&quot;</span><span class="token punctuation">,</span> <span class="token number">6666</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 1.1切换成非阻塞模式</span>
+        socketChannel<span class="token punctuation">.</span><span class="token function">configureBlocking</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 1.2获取选择器</span>
+        <span class="token class-name">Selector</span> selector <span class="token operator">=</span> <span class="token class-name">Selector</span><span class="token punctuation">.</span><span class="token keyword">open</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 1.3将通道注册到选择器中，获取服务端返回的数据</span>
+        socketChannel<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span>selector<span class="token punctuation">,</span> <span class="token class-name">SelectionKey</span><span class="token punctuation">.</span>OP_READ<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 2. 发送一张图片给服务端吧</span>
+        <span class="token class-name">FileChannel</span> fileChannel <span class="token operator">=</span> <span class="token class-name">FileChannel</span><span class="token punctuation">.</span><span class="token keyword">open</span><span class="token punctuation">(</span><span class="token class-name">Paths</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;X:\\Users\\ozc\\Desktop\\新建文件夹\\1.png&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token class-name">StandardOpenOption</span><span class="token punctuation">.</span>READ<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 3.要使用NIO，有了Channel，就必然要有Buffer，Buffer是与数据打交道的呢</span>
+        <span class="token class-name">ByteBuffer</span> buffer <span class="token operator">=</span> <span class="token class-name">ByteBuffer</span><span class="token punctuation">.</span><span class="token function">allocate</span><span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 4.读取本地文件(图片)，发送到服务器</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>fileChannel<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>buffer<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+            <span class="token comment">// 在读之前都要切换成读模式</span>
+            buffer<span class="token punctuation">.</span><span class="token function">flip</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            socketChannel<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>buffer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment">// 读完切换成写模式，能让管道继续读取文件的数据</span>
+            buffer<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+
+        <span class="token comment">// 5. 轮训地获取选择器上已“就绪”的事件---&gt;只要select()&gt;0，说明已就绪</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>selector<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 6. 获取当前选择器所有注册的“选择键”(已就绪的监听事件)</span>
+            <span class="token class-name">Iterator</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">SelectionKey</span><span class="token punctuation">&gt;</span></span> iterator <span class="token operator">=</span> selector<span class="token punctuation">.</span><span class="token function">selectedKeys</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment">// 7. 获取已“就绪”的事件，(不同的事件做不同的事)</span>
+            <span class="token keyword">while</span> <span class="token punctuation">(</span>iterator<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+                <span class="token class-name">SelectionKey</span> selectionKey <span class="token operator">=</span> iterator<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                <span class="token comment">// 8. 读事件就绪</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>selectionKey<span class="token punctuation">.</span><span class="token function">isReadable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+                    <span class="token comment">// 8.1得到对应的通道</span>
+                    <span class="token class-name">SocketChannel</span> channel <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">SocketChannel</span><span class="token punctuation">)</span> selectionKey<span class="token punctuation">.</span><span class="token function">channel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                    <span class="token class-name">ByteBuffer</span> responseBuffer <span class="token operator">=</span> <span class="token class-name">ByteBuffer</span><span class="token punctuation">.</span><span class="token function">allocate</span><span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                    <span class="token comment">// 9. 知道服务端要返回响应的数据给客户端，客户端在这里接收</span>
+                    <span class="token keyword">int</span> readBytes <span class="token operator">=</span> channel<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>responseBuffer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                    <span class="token keyword">if</span> <span class="token punctuation">(</span>readBytes <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                        <span class="token comment">// 切换读模式</span>
+                        responseBuffer<span class="token punctuation">.</span><span class="token function">flip</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>responseBuffer<span class="token punctuation">.</span><span class="token function">array</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> readBytes<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+
+                <span class="token comment">// 10. 取消选择键(已经处理过的事件，就应该取消掉了)</span>
+                iterator<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br></div></div><p>下面就简单总结一下使用NIO时的要点：</p> <p>将Socket通道注册到Selector中，监听感兴趣的事件
+当感兴趣的时间就绪时，则会进去我们处理的方法进行处理
+每处理完一次就绪事件，删除该选择键(因为我们已经处理完了)</p> <h1 id="aio"><a href="#aio" class="header-anchor">#</a> AIO</h1> <p>与NIO不同，当进行读写操作时，只须直接调用API的read或write方法即可。这两种方法均为异步的，对于读操作而言，当有流可读取时，操作系统会将可读的流传入read方法的缓冲区，并通知应用程序；对于写操作而言，当操作系统将write方法传递的流写入完毕时，操作系统主动通知应用程序。  即可以理解为，read/write方法都是异步的，完成后会主动调用回调函数。  在JDK1.7中，这部分内容被称作NIO.2，主要在java.nio.channels包下增加了下面四个异步通道：</p> <ul><li>AsynchronousSocketChannel</li> <li>AsynchronousServerSocketChannel</li> <li>AsynchronousFileChannel</li> <li>AsynchronousDatagramChannel</li></ul> <p>其中的read/write方法，会返回一个带回调函数的对象，当执行完读取/写入操作后，直接调用回调函数。</p> <p>Java对BIO、NIO、AIO的支持：</p> <ul><li>Java BIO ： 同步并阻塞，服务器实现模式为一个连接一个线程，即客户端有连接请求时服务器端就需要启动一个线程进行处理，如果这个连接不做任何事情会造成不必要的线程开销，当然可以通过线程池机制改善。</li> <li>Java NIO ： 同步非阻塞，服务器实现模式为一个请求一个线程，即客户端发送的连接请求都会注册到多路复用器上，多路复用器轮询到连接有I/O请求时才启动一个线程进行处理。</li> <li>Java AIO(NIO.2) ： 异步非阻塞，服务器实现模式为一个有效请求一个线程，客户端的I/O请求都是由OS先完成了再通知服务器应用去启动线程进行处理，</li></ul> <h1 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h1> <p>BIO、NIO、AIO适用场景分析:</p> <ul><li>BIO方式适用于连接数目比较小且固定的架构，这种方式对服务器资源要求比较高，并发局限于应用中，JDK1.4以前的唯一选择，但程序直观简单易理解。</li> <li>NIO方式适用于连接数目多且连接比较短（轻操作）的架构，比如聊天服务器，并发局限于应用中，编程比较复杂，JDK1.4开始支持。</li> <li>AIO方式使用于连接数目多且连接比较长（重操作）的架构，比如相册服务器，充分调用OS参与并发操作，编程比较复杂，JDK7开始支持。</li></ul></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/realpdai/tech-arch-doc/edit/master/md/待整理/Java-IO.md" target="_blank" rel="noopener noreferrer">Edit this page</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2020-6-26 17:00:44</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.afcd353c.js" defer></script><script src="/assets/js/2.6527dd7c.js" defer></script><script src="/assets/js/48.54a6e067.js" defer></script>
+  </body>
+</html>
